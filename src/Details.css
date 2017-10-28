@@ -1,0 +1,52 @@
+.parent{
+  padding-top: 30px;
+  padding-left: 350px;
+}
+
+.detailsContainer{
+  width: 700px;
+  background: lightblue;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.close{
+  align-self: flex-end;
+  font-weight: bold;
+  padding-right: 10px;
+  background: lightblue;
+  font-size: 14px;
+  height: 40px;
+  width: 80px;
+}
+
+textarea{
+  width: 500px;
+  border-color: darkblue;
+  font-size: 14px;
+}
+
+.commentform button{
+  height: 30px;
+  width: 100px;
+  margin-left: 200px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.post{
+  margin-top: 15px;
+  width: 500px;
+  background: lighter;
+  margin-bottom: 15px;
+  box-shadow: 1px 1px 1px 1px;
+}
+.message{
+  text-align: center;
+}
+.commentstatus{
+  cursor: pointer;
+}

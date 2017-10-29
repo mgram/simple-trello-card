@@ -10,7 +10,7 @@ class Card extends Component {
     this.props.history.push('/details/')
   }
   commentcount(){
-    if(this.props.comments == undefined){
+    if(this.props.comments == 0){
       return ''
     }
     else {

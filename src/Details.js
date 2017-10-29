@@ -5,34 +5,20 @@ import {withRouter} from 'react-router-dom';
 class Details extends Component{
   constructor(props){
     super(props);
-    this.state ={messages:[],showcomments:'Show Comments'}
+    this.state = {showcomments:'Show Comments'}
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleComment = this.handleComment.bind(this)
     this.handleClose = this.handleClose.bind(this)
   }
   handleClose(){
-    let value;
-    if(this.state.messages.length == 0){
-      value='/'
-    }
-    else{
-      value = '/' + this.state.messages.length
-    }
-    this.props.history.push(value)
+    this.props.history.push('/')
   }
   handleSubmit(submit_value){
     var newmessage;
     if(this.state.showcomments != 'Hide Comments'){
       this.setState({showcomments:'Hide Comments'})
     }
-    newmessage = this.state.messages
-    if(this.state.messages.length > 0){
-    newmessage.unshift([submit_value])
-    this.setState({messages:newmessage})
-    }
-    else{
-      this.setState({messages:[submit_value]})
-    }
+    this.props.addMessage(submit_value)
   }
   handleComment(){
     var newstate;
@@ -51,8 +37,9 @@ class Details extends Component{
       commentList = []
     }
     else {
-      for(i=0; i<this.state.messages.length; i++)
-      commentList.push(<Post message={this.state.messages[i]} />)
+      let m = this.props.messages
+      for(i=0; i<m.length; i++)
+        commentList.push(<Post message={m[i]} />)
     }
     return commentList
   }

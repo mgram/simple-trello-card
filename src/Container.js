@@ -9,6 +9,7 @@ class Container extends Component{
       <Switch>
       <Route exact path='/' render={(props) => <Card title='Some title goes here' />} />
       <Route path='/details/' component={Details} />
+      <Route path='/:comments_count' render={({match}) => <Card title='Some title goes here' comments={match.params.comments_count}/>} />
       </Switch>
     )
   }

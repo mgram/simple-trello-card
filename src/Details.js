@@ -11,7 +11,14 @@ class Details extends Component{
     this.handleClose = this.handleClose.bind(this)
   }
   handleClose(){
-    this.props.history.push('/')
+    let value;
+    if(this.state.messages.length == 0){
+      value='/'
+    }
+    else{
+      value = '/' + this.state.messages.length
+    }
+    this.props.history.push(value)
   }
   handleSubmit(submit_value){
     var newmessage;
